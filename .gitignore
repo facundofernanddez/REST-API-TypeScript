@@ -1,6 +1,6 @@
-##
+# node
 build
 node_modules
 
-##
+#enviroment variables
 .env
