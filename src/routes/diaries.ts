@@ -10,7 +10,9 @@ router.get('/', (_req, res) => {
 router.get('/:id', (req, res) => {
   const diary = diaryServices.findById(+req.params.id)
 
-  return (diary != null) ? res.send(diary) : res.status(404).send('Diary not found')
+  return (diary != null)
+    ? res.send(diary)
+    : res.status(404).send('Diary not found')
 })
 
 router.post('/', (_req, res) => {
