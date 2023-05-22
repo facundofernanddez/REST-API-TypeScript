@@ -1,4 +1,4 @@
-import { DiaryEntry, NonSensitiveInfoDiaryEntry } from '../types'
+import { DiaryEntry, NonSensitiveInfoDiaryEntry, Visibility, Weather } from '../types'
 import diaryData from './diaries.json'
 
 const diaries: DiaryEntry[] = diaryData as DiaryEntry[]
@@ -23,4 +23,9 @@ export const getEntriesWithoutSensitiveInfo =
     })
   }
 
-export const addEntry = (): null => null
+export const addEntry = (date: string, weather: Weather, visibility: Visibility, comment: string): DiaryEntry => {
+  const newDiaryEntry = { id: diaries.length + 1, date, weather, visibility, comment }
+
+  diaries.push(newDiaryEntry)
+  return newDiaryEntry
+}
