@@ -1,4 +1,4 @@
-import express, { json } from 'express'
+import express from 'express'
 import * as diaryServices from '../services/diaryServices'
 import toNewDiaryEntry from '../utils'
 
@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 
     res.json(addedDiaryEntry)
   } catch (e: any) {
-    res.status(400).send(json(e.message))
+    res.status(400).send(e.message)
   }
 })
 

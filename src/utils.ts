@@ -9,7 +9,7 @@ const parseComment = (commentFromRequest: any): string => {
 }
 
 const parseDate = (dateFromRequest: any): string => {
-  if (!isString(dateFromRequest) || isDate(dateFromRequest)) {
+  if (!isString(dateFromRequest) || !isDate(dateFromRequest)) {
     throw new Error('Incorrect or missing date')
   }
 
